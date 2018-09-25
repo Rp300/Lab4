@@ -90,7 +90,16 @@ public class Colosseum {
      * Implement this function.
      */
     public static void printWhoIsAhead() {
-        System.out.println("Implement me!");
+
+        if(firstPokemon.hitPoints > secondPokemon.hitPoints){
+            System.out.println(firstPokemon.name + " is currently ahead!");
+        }
+        else if (firstPokemon.hitPoints < secondPokemon.hitPoints){
+            System.out.println(secondPokemon.name + " is currently ahead!");
+        }
+        else {
+            System.out.println("It is currently a tie!");
+        }
     }
 
     /**
@@ -110,17 +119,37 @@ public class Colosseum {
      * You do not need to modify this function.
      */
     public static void initializePokemon() {
+
+
         System.out.println("Player 1, build your Pokemon!");
         System.out.println("=================");
         firstPokemon = buildPokemon();
-        firstPokemon.name = "Chuchu";
+        System.out.println("Pokemon Name: ");
+        firstPokemon.name = myScan.nextLine();
+        System.out.println("Hit points can be initialized to between 1 and 50");
+        System.out.println("Hit points:");
+        firstPokemon.hitPoints= myScan.nextInt();
+        System.out.println("Users have up to 50 points to split between attack level and defense level");
+        System.out.println("Attack level:");
+        firstPokemon.attackLevel = myScan.nextInt();
+        System.out.println("Defense level:");
+        firstPokemon.defenseLevel = myScan.nextInt();
 
-        System.out.println("");
+        System.out.println();
 
         System.out.println("Player 2, build your Pokemon!");
         System.out.println("==================");
         secondPokemon = buildPokemon();
-        secondPokemon.name = "Xyz";
+        System.out.println("Pokemon Name: ");
+        secondPokemon.name = myScan.next();
+        System.out.println("Hit points can be initialized to between 1 and 50");
+        System.out.println("Hit points:");
+        secondPokemon.hitPoints= myScan.nextInt();
+        System.out.println("Users have up to 50 points to split between attack level and defense level");
+        System.out.println("Attack level:");
+        secondPokemon.attackLevel = myScan.nextInt();
+        System.out.println("Defense level:");
+        secondPokemon.defenseLevel = myScan.nextInt();
     }
 
     /**
