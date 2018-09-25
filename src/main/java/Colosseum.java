@@ -110,7 +110,12 @@ public class Colosseum {
      * Write this function.
      */
     public static void determineWinner() {
-        System.out.println("Implement me!");
+        if (secondPokemon.hitPoints <= 0) {
+            System.out.println(firstPokemon.name+ " has won!");
+        }
+        else if (firstPokemon.hitPoints <= 0){
+            System.out.println(secondPokemon.name+ " has won!");
+        }
     }
 
     /**
